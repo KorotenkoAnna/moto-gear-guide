@@ -18,14 +18,19 @@ layout: layouts/base.njk
       <span class="muted">{% if curLang == "en" %}Content is being written — structure and design are already in place{% else %}Contenu en cours de rédaction — structure et design déjà en place{% endif %}</span>
     </div>
 
+    {% if articles | length %}
     <div class="card-grid">
       {% for item in articles %}
       {% if item.url %}
       <a class="card" href="{{ item.url }}">
+        {% if item.image %}
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="icon">
+        {% else %}
         {{ icon(item.icon or "info") }}
-        <span class="tag">{% if curLang == "en" %}Coming soon{% else %}À venir{% endif %}</span>
+        {% endif %}
+        {% if not item.image %}<span class="tag">{% if curLang == "en" %}Coming soon{% else %}À venir{% endif %}</span>{% endif %}
         <h3>{{ item.title }}</h3>
-        <p>{{ item.summary }}</p>
+        <p>{{ item.description or item.summary }}</p>
       </a>
       {% else %}
       <div class="card" style="opacity:0.6;">
@@ -37,5 +42,8 @@ layout: layouts/base.njk
       {% endif %}
       {% endfor %}
     </div>
+    {% else %}
+    <p class="muted">{% if curLang == "en" %}No articles published in this section yet.{% else %}Aucun article publié dans cette rubrique pour l'instant.{% endif %}</p>
+    {% endif %}
   </div>
 </div>
