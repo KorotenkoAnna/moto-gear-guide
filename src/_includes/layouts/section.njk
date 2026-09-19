@@ -2,9 +2,10 @@
 layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
+{% set curLang = lang or "fr" %}
 <div class="page-hero">
   <div class="wrap">
-    <p class="eyebrow">Rubrique</p>
+    <p class="eyebrow">{% if curLang == "en" %}Section{% else %}Rubrique{% endif %}</p>
     <h1>{{ title }}</h1>
     {% if lead %}<p>{{ lead }}</p>{% endif %}
   </div>
@@ -13,8 +14,8 @@ layout: layouts/base.njk
 <div class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Dans cette rubrique</h2>
-      <span class="muted">Contenu en cours de rédaction — structure et design déjà en place</span>
+      <h2>{% if curLang == "en" %}In this section{% else %}Dans cette rubrique{% endif %}</h2>
+      <span class="muted">{% if curLang == "en" %}Content is being written — structure and design are already in place{% else %}Contenu en cours de rédaction — structure et design déjà en place{% endif %}</span>
     </div>
 
     <div class="card-grid">
@@ -22,14 +23,14 @@ layout: layouts/base.njk
       {% if item.url %}
       <a class="card" href="{{ item.url }}">
         {{ icon(item.icon or "info") }}
-        <span class="tag">À venir</span>
+        <span class="tag">{% if curLang == "en" %}Coming soon{% else %}À venir{% endif %}</span>
         <h3>{{ item.title }}</h3>
         <p>{{ item.summary }}</p>
       </a>
       {% else %}
       <div class="card" style="opacity:0.6;">
         {{ icon(item.icon or "info") }}
-        <span class="tag">Sujet prévu</span>
+        <span class="tag">{% if curLang == "en" %}Topic planned{% else %}Sujet prévu{% endif %}</span>
         <h3>{{ item.title }}</h3>
         <p>{{ item.summary }}</p>
       </div>

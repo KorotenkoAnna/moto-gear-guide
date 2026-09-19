@@ -19,6 +19,7 @@
       { "label": "Mentions légales", "url": "/fr/content/3-cgv.html" }
     ],
     "footerNote": "Projet éditorial indépendant. Guides et comparatifs sur l'équipement moto/scooter, publiés à titre informatif — pas de boutique en ligne, pas d'affiliation avec une marque en particulier.",
+    "announcement": "Guide indépendant — mis à jour régulièrement",
     "homeUrl": "/"
   },
   "en": {
@@ -39,6 +40,7 @@
       { "label": "Legal notice", "url": "/fr/content/3-cgv.html" }
     ],
     "footerNote": "Independent editorial project. Guides and comparisons on motorcycle/scooter gear, published for informational purposes — no online shop, no affiliation with any particular brand.",
+    "announcement": "Independent guide — updated regularly",
     "homeUrl": "/en/"
   }
 }

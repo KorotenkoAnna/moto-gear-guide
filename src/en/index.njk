@@ -7,59 +7,86 @@ description: Independent guides and comparisons to help you choose your jacket, 
 ---
 {% from "partials/icons.njk" import icon %}
 <div class="hero">
+  <div class="hero__media">{{ icon("jacket") }}</div>
   <div class="wrap">
-    <div>
-      <p class="eyebrow">Independent guide</p>
-      <h1>Gear up for city riding, without the guesswork.</h1>
-      <p class="lead">
-        Jackets, helmets, gloves, back protectors and safety standards: clear guides
-        for urban riders and scooter commuters — no shop, just practical benchmarks
-        to help you choose.
-      </p>
-    </div>
-    <div class="hero-art">
-      {{ icon("jacket", "hero-photo") }}
-    </div>
+    <p class="eyebrow">Independent guide</p>
+    <h1>Gear up for city riding, without the guesswork.</h1>
+    <p class="lead">
+      Jackets, helmets, gloves, back protectors and safety standards: clear guides
+      for urban riders and scooter commuters — no shop, just practical benchmarks
+      to help you choose.
+    </p>
+    <a class="btn btn--outline" href="/en/jackets/">Explore the guides</a>
+  </div>
+</div>
+
+<div class="promo-split">
+  <div class="promo-split__panel promo-split__panel--navy">
+    <p class="promo-split__kicker">New guide</p>
+    <p class="promo-split__big">CE &amp; NIJ standards</p>
+  </div>
+  <div class="promo-split__panel promo-split__panel--light">
+    <h2>Understand the standards before you buy</h2>
+    <p>Understanding CE and NIJ certifications and protection levels before you buy — explained simply.</p>
+    <a class="btn btn--navy" href="/en/safety-standards/">Discover the guide</a>
   </div>
 </div>
 
 <div class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Explore by topic</h2>
+      <h2>Our sections</h2>
       <span class="muted">The site is under construction — the sections and design are in place, content is being added topic by topic</span>
     </div>
-    <div class="card-grid">
-      <a class="card" href="/en/jackets/">
-        {{ icon("jacket") }}
-        <h3>Jackets</h3>
-        <p>Leather or textile jackets, reversible jackets, scooter trench coats: how to choose based on use.</p>
+    <div class="rubrique-grid">
+      <a class="rubrique-tile" href="/en/jackets/">
+        <span class="rubrique-tile__label">Jackets</span>
+        <span class="rubrique-tile__desc">Leather, textile, reversible jackets, trenches.</span>
       </a>
-      <a class="card" href="/en/helmets-gloves-protection/">
-        {{ icon("helmet") }}
-        <h3>Helmets, gloves & protection</h3>
-        <p>Open-face/full-face helmets, approved gloves, back and joint protectors.</p>
+      <a class="rubrique-tile" href="/en/helmets-gloves-protection/">
+        <span class="rubrique-tile__label">Helmets, gloves &amp; protection</span>
+        <span class="rubrique-tile__desc">Open/full-face helmets, approved gloves, back protectors.</span>
       </a>
-      <a class="card" href="/en/ballistic-protection/">
-        {{ icon("shield") }}
-        <h3>Ballistic protection</h3>
-        <p>Discreet civilian protective equipment: what it is, who it's for, and what the law says.</p>
+      <a class="rubrique-tile" href="/en/ballistic-protection/">
+        <span class="rubrique-tile__label">Ballistic protection</span>
+        <span class="rubrique-tile__desc">Discreet civilian protection: what, for whom, the law.</span>
       </a>
-      <a class="card" href="/en/safety-standards/">
-        {{ icon("certificate") }}
-        <h3>Safety standards</h3>
-        <p>Understanding CE and NIJ certifications and protection levels before you buy.</p>
+      <a class="rubrique-tile" href="/en/safety-standards/">
+        <span class="rubrique-tile__label">Safety standards</span>
+        <span class="rubrique-tile__desc">CE, NIJ certifications and protection levels.</span>
       </a>
-      <a class="card" href="/en/guides/">
-        {{ icon("compass") }}
-        <h3>Guides & comparisons</h3>
-        <p>Comparisons, budgets, and in-depth practical guides for riding well-equipped all year round.</p>
+      <a class="rubrique-tile" href="/en/guides/">
+        <span class="rubrique-tile__label">Guides &amp; comparisons</span>
+        <span class="rubrique-tile__desc">Comparisons, budgets, practical guides.</span>
       </a>
-      <a class="card" href="/en/about/">
-        {{ icon("info") }}
-        <h3>About this project</h3>
-        <p>Who writes these guides, with what method, and why this site isn't a shop.</p>
+      <a class="rubrique-tile rubrique-tile--accent" href="/en/about/">
+        <span class="rubrique-tile__label">About this project</span>
+        <span class="rubrique-tile__desc">Who writes, with what method, and why.</span>
       </a>
     </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrap feature-split">
+    <div class="feature-split__text">
+      <p class="feature-split__word" data-first-letter="G">GEARED.</p>
+      <p>Who writes these guides, with what method, and why this site isn't a shop: no brand to sell, no product sheets disguised as articles.</p>
+      <a class="btn btn--navy" href="/en/about/">Learn more</a>
+    </div>
+    <div class="feature-split__media">{{ icon("info") }}</div>
+  </div>
+</div>
+
+<div class="newsletter">
+  <div class="wrap newsletter__inner">
+    <div class="newsletter__text">
+      <h2>Newsletter</h2>
+      <p>Get our new guides and comparisons, no spam.</p>
+    </div>
+    <form class="newsletter__form" action="/en/contact/" method="get">
+      <input type="email" name="email" placeholder="Your email" aria-label="Email address" required>
+      <button type="submit" class="btn btn--accent">Subscribe</button>
+    </form>
   </div>
 </div>
