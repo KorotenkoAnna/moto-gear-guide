@@ -19,31 +19,6 @@ layout: layouts/base.njk
     </div>
 
     <div class="card-grid">
-      {% if collectionTag %}
-      {% set realArticles = collections[collectionTag] %}
-      {% for item in realArticles %}
-      {% if item.data.lang != "en" %}
-      <a class="card" href="{{ item.url }}">
-        {% if item.data.image %}
-          <img src="{{ item.data.image }}" alt="{{ item.data.title }}" style="border-radius: 10px; margin-bottom: 8px; aspect-ratio: 4/3; object-fit: cover;">
-        {% else %}
-          {{ icon(item.data.icon or "info") }}
-        {% endif %}
-        {% if not item.data.published %}<span class="tag">À venir</span>{% endif %}
-        <h3>{{ item.data.title }}</h3>
-        <p>{{ item.data.lead }}</p>
-      </a>
-      {% endif %}
-      {% endfor %}
-      {% for item in ideas %}
-      <div class="card" style="opacity:0.6;">
-        {{ icon(item.icon or "info") }}
-        <span class="tag">Sujet prévu</span>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.summary }}</p>
-      </div>
-      {% endfor %}
-      {% else %}
       {% for item in articles %}
       {% if item.url %}
       <a class="card" href="{{ item.url }}">
@@ -61,7 +36,6 @@ layout: layouts/base.njk
       </div>
       {% endif %}
       {% endfor %}
-      {% endif %}
     </div>
   </div>
 </div>
