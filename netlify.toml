@@ -5,9 +5,106 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Trailing-slash / canonical handling for restored legacy URLs.
-# Real 301 redirects for the old domain's non-preserved URLs will be added
-# here later as a separate step (see the "ТЗ: 301-редиректы" doc).
+# 301 redirects for old Shopify/PrestaShop-era URLs that were NOT restored as
+# their own pages. No `force = true` anywhere: without it, Netlify still
+# prefers a real file at that path, so the wildcard fallback rules below
+# can't shadow already-restored pages like /products/dorsale/.
+# Exact addresses first, wildcard fallbacks after — Netlify matches top to
+# bottom and stops at the first hit.
+
+[[redirects]]
+  from = "/pages/point-de-ventes"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/collections/collection-homme"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/a/l/en/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/password"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/policies/refund-policy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/request-personal-data"
+  to = "/fr/content/3-cgv.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/a-propos"
+  to = "/a-propos/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/products/parka-810"
+  to = "/products/trench-901/"
+  status = 301
+
+[[redirects]]
+  from = "/collections/veste-moto-design"
+  to = "/vestes-blousons/"
+  status = 301
+
+[[redirects]]
+  from = "/collections/blouson-moto-scooter"
+  to = "/vestes-blousons/"
+  status = 301
+
+[[redirects]]
+  from = "/collections/veste-moto-legere"
+  to = "/vestes-blousons/"
+  status = 301
+
+# шаблонные правила-подстраховка — на случай URL, которых нет в списке выше
+[[redirects]]
+  from = "/products/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/collections/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/inventive-live/*"
+  to = "/guides/"
+  status = 301
+
+[[redirects]]
+  from = "/fr/content/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/a/l/en/*"
+  to = "/"
+  status = 301
+
+# Catch-all — must stay last: everything above is matched first, and only an
+# unmatched URL falls through to this 404.
 [[redirects]]
   from = "/*"
   to = "/404.html"
