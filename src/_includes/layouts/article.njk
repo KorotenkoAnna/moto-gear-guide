@@ -19,6 +19,9 @@ layout: layouts/base.njk
       {{ title }}
     </p>
 
+    {% if content and content | trim %}
+    <div class="article-content">{{ content | safe }}</div>
+    {% else %}
     <div class="placeholder-notice">
       {% if curLang == "en" %}
       <strong>{{ noticeTitle or "Page in progress." }}</strong>
@@ -33,6 +36,7 @@ layout: layouts/base.njk
     <p class="fine-print" style="color: var(--color-ink-soft);">
       {% if curLang == "en" %}Address kept unchanged —{% else %}Adresse conservée à l'identique —{% endif %} {{ keepReason }}
     </p>
+    {% endif %}
     {% endif %}
 
     {% if translationUrl %}

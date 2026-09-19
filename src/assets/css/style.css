@@ -605,6 +605,51 @@ h1, h2, h3 {
 .article-body { padding: 44px 0 64px; }
 .article-body .wrap { max-width: 760px; }
 
+/* ---------- Real article prose (restored pages with actual content) ---------- */
+
+.article-content { margin-top: 28px; }
+.article-content > *:first-child { margin-top: 0; }
+
+.article-content p { margin: 0 0 18px; }
+
+.article-content h2,
+.article-content h3 { margin: 40px 0 14px; }
+
+.article-content img {
+  border-radius: var(--radius-lg);
+  margin: 24px 0;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 22px;
+  margin: 0 0 20px;
+}
+
+.article-content li { margin-bottom: 6px; }
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.9rem;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid var(--color-line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.article-content thead th {
+  background: var(--color-bg);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
 .breadcrumbs {
   font-size: 0.85rem;
   color: var(--color-ink-soft);
