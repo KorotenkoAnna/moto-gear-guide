@@ -1,20 +1,44 @@
 {
-  "name": "Guide Équipement Moto",
-  "tagline": "Guides indépendants sur l'équipement moto & scooter urbain",
+  "name": "Ingénicité",
   "url": "https://REPLACE-WITH-DOMAIN.example",
-  "locale": "fr_FR",
-  "defaultDescription": "Guides pratiques et indépendants pour bien choisir son équipement de moto ou de scooter en ville : vestes, casques, gants, protections et normes de sécurité.",
-  "nav": [
-    { "label": "Vestes & blousons", "url": "/vestes-blousons/" },
-    { "label": "Casques, gants & protections", "url": "/casques-gants-protections/" },
-    { "label": "Protection balistique", "url": "/protection-balistique/" },
-    { "label": "Normes & sécurité", "url": "/normes-securite/" },
-    { "label": "Guides & comparatifs", "url": "/guides/" },
-    { "label": "À propos", "url": "/a-propos/" }
-  ],
-  "footerNav": [
-    { "label": "À propos", "url": "/a-propos/" },
-    { "label": "Contact", "url": "/contact/" },
-    { "label": "Mentions légales", "url": "/fr/content/3-cgv.html" }
-  ]
+  "fr": {
+    "locale": "fr_FR",
+    "tagline": "Guides indépendants sur l'équipement moto & scooter urbain",
+    "defaultDescription": "Guides pratiques et indépendants pour bien choisir son équipement de moto ou de scooter en ville : vestes, casques, gants, protections et normes de sécurité.",
+    "nav": [
+      { "label": "Vestes & blousons", "url": "/vestes-blousons/" },
+      { "label": "Casques, gants & protections", "url": "/casques-gants-protections/" },
+      { "label": "Protection balistique", "url": "/protection-balistique/" },
+      { "label": "Normes & sécurité", "url": "/normes-securite/" },
+      { "label": "Guides & comparatifs", "url": "/guides/" },
+      { "label": "À propos", "url": "/a-propos/" }
+    ],
+    "footerNav": [
+      { "label": "À propos", "url": "/a-propos/" },
+      { "label": "Contact", "url": "/contact/" },
+      { "label": "Mentions légales", "url": "/fr/content/3-cgv.html" }
+    ],
+    "footerNote": "Projet éditorial indépendant. Guides et comparatifs sur l'équipement moto/scooter, publiés à titre informatif — pas de boutique en ligne, pas d'affiliation avec une marque en particulier.",
+    "homeUrl": "/"
+  },
+  "en": {
+    "locale": "en_US",
+    "tagline": "Independent guides to urban motorcycle & scooter gear",
+    "defaultDescription": "Practical, independent guides to choosing motorcycle or scooter gear for city riding: jackets, helmets, gloves, protective gear and safety standards.",
+    "nav": [
+      { "label": "Jackets", "url": "/en/jackets/" },
+      { "label": "Helmets, gloves & protection", "url": "/en/helmets-gloves-protection/" },
+      { "label": "Ballistic protection", "url": "/en/ballistic-protection/" },
+      { "label": "Safety standards", "url": "/en/safety-standards/" },
+      { "label": "Guides & comparisons", "url": "/en/guides/" },
+      { "label": "About", "url": "/en/about/" }
+    ],
+    "footerNav": [
+      { "label": "About", "url": "/en/about/" },
+      { "label": "Contact", "url": "/en/contact/" },
+      { "label": "Legal notice", "url": "/fr/content/3-cgv.html" }
+    ],
+    "footerNote": "Independent editorial project. Guides and comparisons on motorcycle/scooter gear, published for informational purposes — no online shop, no affiliation with any particular brand.",
+    "homeUrl": "/en/"
+  }
 }

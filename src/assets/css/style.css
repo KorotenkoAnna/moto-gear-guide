@@ -74,12 +74,38 @@ a:hover { color: var(--color-accent); }
 .brand:hover { color: var(--color-accent); }
 
 .brand-mark {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   flex: none;
-  border-radius: 50%;
-  object-fit: cover;
+  color: var(--color-accent);
 }
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.header-lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.header-lang-switch a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.header-lang-switch a:hover { color: #fff; }
+
+.header-lang-switch .lang-current { color: var(--color-accent); }
 
 .nav-toggle {
   display: none;

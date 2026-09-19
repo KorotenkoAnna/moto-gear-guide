@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
+{% set curLang = lang or "fr" %}
 <div class="page-hero">
   <div class="wrap">
     <p class="eyebrow">{{ section }}</p>
@@ -13,27 +14,31 @@ layout: layouts/base.njk
 <div class="article-body">
   <div class="wrap">
     <p class="breadcrumbs">
-      <a href="/">Accueil</a> ›
+      <a href="{{ site[curLang].homeUrl }}">{% if curLang == "en" %}Home{% else %}Accueil{% endif %}</a> ›
       {% if sectionUrl %}<a href="{{ sectionUrl }}">{{ section }}</a> › {% endif %}
       {{ title }}
     </p>
 
     <div class="placeholder-notice">
+      {% if curLang == "en" %}
+      <strong>{{ noticeTitle or "Page in progress." }}</strong>
+      {{ noticeBody or "This URL is intentionally restored (good external link and/or real search volume — see the URL map) and will keep this exact address. The final content will be written at a later step; for now this page only fixes the structure and design." }}
+      {% else %}
       <strong>{{ noticeTitle or "Page en préparation." }}</strong>
       {{ noticeBody or "Cette URL est restaurée intentionnellement (bon lien externe et/ou vrai volume de recherche — voir la carte d'URL) et gardera exactement cette adresse. Le contenu définitif sera rédigé dans une prochaine étape ; pour l'instant la page ne sert qu'à fixer la structure et le design." }}
+      {% endif %}
     </div>
 
     {% if keepReason %}
     <p class="fine-print" style="color: var(--color-ink-soft);">
-      Adresse conservée à l'identique — {{ keepReason }}
+      {% if curLang == "en" %}Address kept unchanged —{% else %}Adresse conservée à l'identique —{% endif %} {{ keepReason }}
     </p>
     {% endif %}
 
-    {% if enUrl %}
-    <p class="lang-switch"><a href="{{ enUrl }}">EN version →</a></p>
-    {% endif %}
-    {% if frUrl %}
-    <p class="lang-switch"><a href="{{ frUrl }}">← Version FR</a></p>
+    {% if translationUrl %}
+    <p class="lang-switch">
+      <a href="{{ translationUrl }}">{% if curLang == "en" %}← Version FR{% else %}EN version →{% endif %}</a>
+    </p>
     {% endif %}
   </div>
 </div>

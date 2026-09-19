@@ -1,17 +1,19 @@
 <!doctype html>
-<html lang="{{ lang or 'fr' }}">
+{% set curLang = lang or "fr" %}
+<html lang="{{ curLang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}{% if title %} · {% endif %}{{ site.name }}</title>
-  <meta name="description" content="{{ description or site.defaultDescription }}">
+  <meta name="description" content="{{ description or site[curLang].defaultDescription }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% if translationUrl %}<link rel="alternate" hreflang="{{ 'en' if curLang == 'fr' else 'fr' }}" href="{{ site.url }}{{ translationUrl }}">{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ title or site.name }}">
-  <meta property="og:description" content="{{ description or site.defaultDescription }}">
-  <meta property="og:locale" content="{{ site.locale }}">
+  <meta property="og:description" content="{{ description or site[curLang].defaultDescription }}">
+  <meta property="og:locale" content="{{ site[curLang].locale }}">
 
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
