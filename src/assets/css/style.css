@@ -339,7 +339,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.page-hero h1 { margin: 10px 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+.page-hero h1 { color: #fff; margin: 10px 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
 .page-hero p { color: rgba(255, 255, 255, 0.8); margin: 14px auto 0; max-width: 60ch; }
 
 /* ---------- Promo split (e.g. "featured guide" banner) ---------- */
