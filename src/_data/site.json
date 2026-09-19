@@ -11,6 +11,7 @@
       { "label": "Protection balistique", "url": "/protection-balistique/" },
       { "label": "Normes & sécurité", "url": "/normes-securite/" },
       { "label": "Guides & comparatifs", "url": "/guides/" },
+      { "label": "Blog", "url": "/blog/" },
       { "label": "À propos", "url": "/a-propos/" }
     ],
     "footerNav": [
@@ -32,6 +33,7 @@
       { "label": "Ballistic protection", "url": "/en/ballistic-protection/" },
       { "label": "Safety standards", "url": "/en/safety-standards/" },
       { "label": "Guides & comparisons", "url": "/en/guides/" },
+      { "label": "Blog", "url": "/en/blog/" },
       { "label": "About", "url": "/en/about/" }
     ],
     "footerNav": [
