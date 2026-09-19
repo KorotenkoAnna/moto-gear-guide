@@ -4,6 +4,15 @@ lang: fr
 translationUrl: "/en/"
 title: Bien choisir son équipement moto & scooter en ville
 description: Guides indépendants et comparatifs pour choisir sa veste, son casque, ses gants et ses protections en conduite urbaine — sans boutique, sans marque à vendre.
+latestArticles:
+  - title: "Style urbain à moto : composer un look motard qui a du style"
+    url: "/fr/blog/daniel-bravo-en-inventive-citi-b137.html"
+    description: "Look motard vintage, look motarde femme, style urbain homme... comment choisir une veste moto stylée sans sacrifier la protection en ville."
+    image: "https://images.pexels.com/photos/8301257/pexels-photo-8301257.jpeg"
+  - title: "Gilet pare-balles discret : guide complet de la veste pare-balles civile"
+    url: "/products/veste-costume-pare-balles/"
+    description: "Veste ou gilet pare-balles discret pour civils : niveaux de protection, port au quotidien et critères pour bien choisir sa protection balistique civile."
+    image: "/assets/img/veste-pare-balles-discrete-1.jpg"
 ---
 {% from "partials/icons.njk" import icon %}
 <div class="hero">
@@ -29,6 +38,24 @@ description: Guides indépendants et comparatifs pour choisir sa veste, son casq
     <h2>Comprendre les normes avant d'acheter</h2>
     <p>Comprendre les certifications CE, NIJ et les niveaux de protection avant d'acheter — expliqué simplement.</p>
     <a class="btn btn--navy" href="/normes-securite/">Découvrir le guide</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Derniers articles</h2>
+      <span class="muted">Les publications les plus récentes, tous rubriques confondues</span>
+    </div>
+    <div class="card-grid">
+      {% for item in latestArticles %}
+      <a class="card" href="{{ item.url }}">
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="icon">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 

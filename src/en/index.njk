@@ -4,6 +4,15 @@ lang: en
 translationUrl: "/"
 title: Choosing the right motorcycle & scooter gear in the city
 description: Independent guides and comparisons to help you choose your jacket, helmet, gloves and protective gear for urban riding — no shop, no brand to sell.
+latestArticles:
+  - title: "Urban Motorcycle Style: How to Build a Biker Look With Real Protection"
+    url: "/en/guides/urban-motorcycle-style/"
+    description: "Vintage biker look, women's biker look, men's urban style... how to choose a stylish motorcycle jacket without sacrificing protection."
+    image: "https://images.pexels.com/photos/8301257/pexels-photo-8301257.jpeg"
+  - title: "Civilian Bulletproof Jacket: Complete Guide to Discreet Body Armor"
+    url: "/en/products/veste-costume-pare-balles/"
+    description: "Bulletproof jacket for civilians: protection levels, discreet everyday wear, and what to check before buying concealed body armor."
+    image: "/assets/img/veste-pare-balles-discrete-1.jpg"
 ---
 {% from "partials/icons.njk" import icon %}
 <div class="hero">
@@ -29,6 +38,24 @@ description: Independent guides and comparisons to help you choose your jacket, 
     <h2>Understand the standards before you buy</h2>
     <p>Understanding CE and NIJ certifications and protection levels before you buy — explained simply.</p>
     <a class="btn btn--navy" href="/en/safety-standards/">Discover the guide</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest articles</h2>
+      <span class="muted">Our most recent publications, across all sections</span>
+    </div>
+    <div class="card-grid">
+      {% for item in latestArticles %}
+      <a class="card" href="{{ item.url }}">
+        <img src="{{ item.image }}" alt="{{ item.title }}" class="icon">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
