@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Rubrique</p>
+    <h1>{{ title }}</h1>
+    {% if lead %}<p>{{ lead }}</p>{% endif %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Dans cette rubrique</h2>
+      <span class="muted">Contenu en cours de rédaction — structure et design déjà en place</span>
+    </div>
+
+    <div class="card-grid">
+      {% for item in articles %}
+      {% if item.url %}
+      <a class="card" href="{{ item.url }}">
+        {{ icon(item.icon or "info") }}
+        <span class="tag">À venir</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.summary }}</p>
+      </a>
+      {% else %}
+      <div class="card" style="opacity:0.6;">
+        {{ icon(item.icon or "info") }}
+        <span class="tag">Sujet prévu</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.summary }}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

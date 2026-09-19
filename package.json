@@ -1,0 +1,14 @@
+{
+  "name": "moto-gear-guide",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Site-guide informationnel sur l'équipement moto/scooter urbain (vestes, casques, protections, normes).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

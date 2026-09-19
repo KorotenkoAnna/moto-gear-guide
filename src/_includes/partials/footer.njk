@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <nav aria-label="Navigation de pied de page">
+        <ul>
+          {% for item in site.footerNav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <p class="fine-print">
+        Projet éditorial indépendant. Guides et comparatifs sur l'équipement moto/scooter,
+        publiés à titre informatif — pas de boutique en ligne, pas d'affiliation avec une marque en particulier.
+      </p>
+    </div>
+    <div class="fine-print">
+      © {{ "now" | year }} {{ site.name }}
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>

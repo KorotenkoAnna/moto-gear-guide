@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Guide Équipement Moto — design system
+   Simple, stylish, dependency-free (system fonts, no external requests).
+   ========================================================================== */
+
+:root {
+  --color-bg: #f6f5f2;
+  --color-bg-alt: #ffffff;
+  --color-ink: #16181c;
+  --color-ink-soft: #52565f;
+  --color-line: #e3e1db;
+  --color-graphite: #1c1f24;
+  --color-graphite-soft: #2b2f36;
+  --color-accent: #ff6a1a;
+  --color-accent-ink: #7a2e00;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(20, 20, 20, 0.06);
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --maxw: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-accent-ink); text-decoration-color: var(--color-accent); }
+a:hover { color: var(--color-accent); }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--color-graphite);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand:hover { color: var(--color-accent); }
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+@media (max-width: 860px) {
+  .nav-toggle { display: inline-flex; align-items: center; gap: 6px; }
+  .main-nav {
+    display: none;
+    width: 100%;
+    padding-bottom: 12px;
+  }
+  .main-nav.is-open { display: block; }
+  .main-nav ul { flex-direction: column; gap: 2px; }
+  .site-header .wrap { flex-wrap: wrap; }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-graphite-soft) 60%, #3a2415 130%);
+  color: #fff;
+  padding: 64px 0 56px;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.hero p.lead {
+  color: rgba(255,255,255,0.82);
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+
+.hero-art { justify-self: center; }
+
+/* ---------- Page header (non-home) ---------- */
+
+.page-hero {
+  background: var(--color-graphite);
+  color: #fff;
+  padding: 48px 0;
+}
+
+.page-hero h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+.page-hero p { color: rgba(255,255,255,0.78); margin: 0; max-width: 60ch; }
+.page-hero .eyebrow { margin-bottom: 10px; }
+
+/* ---------- Sections / cards ---------- */
+
+.section {
+  padding: 56px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 { margin: 0; font-size: 1.5rem; }
+.section-head .muted { color: var(--color-ink-soft); font-size: 0.95rem; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(20,20,20,0.1);
+}
+
+.card .icon { width: 40px; height: 40px; color: var(--color-accent); }
+.card h3 { margin: 4px 0 0; font-size: 1.05rem; color: var(--color-ink); }
+.card p { margin: 0; color: var(--color-ink-soft); font-size: 0.92rem; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-ink);
+  background: #fff1e6;
+  border-radius: 999px;
+  padding: 3px 10px;
+  width: fit-content;
+}
+
+/* ---------- Placeholder / "coming soon" article body ---------- */
+
+.placeholder-notice {
+  background: #fff8ef;
+  border: 1px dashed #e7b98a;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  color: #6b4a1f;
+  font-size: 0.95rem;
+  margin: 28px 0;
+}
+
+.placeholder-notice strong { color: var(--color-accent-ink); }
+
+.article-body {
+  padding: 44px 0 64px;
+}
+
+.article-body .wrap { max-width: 760px; }
+
+.meta-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin: 18px 0 0;
+}
+
+.breadcrumbs a { color: var(--color-ink-soft); }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--color-graphite);
+  color: rgba(255,255,255,0.75);
+  padding: 40px 0 28px;
+  margin-top: 40px;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.site-footer nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  margin: 0 0 12px;
+  flex-wrap: wrap;
+}
+
+.site-footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+.site-footer a:hover { color: #fff; }
+
+.fine-print {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 640px;
+}
+
+.lang-switch {
+  font-size: 0.82rem;
+}
+
+.lang-switch a { margin-right: 10px; }

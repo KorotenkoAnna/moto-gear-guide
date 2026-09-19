@@ -1,0 +1,20 @@
+{
+  "name": "Guide Équipement Moto",
+  "tagline": "Guides indépendants sur l'équipement moto & scooter urbain",
+  "url": "https://REPLACE-WITH-DOMAIN.example",
+  "locale": "fr_FR",
+  "defaultDescription": "Guides pratiques et indépendants pour bien choisir son équipement de moto ou de scooter en ville : vestes, casques, gants, protections et normes de sécurité.",
+  "nav": [
+    { "label": "Vestes & blousons", "url": "/vestes-blousons/" },
+    { "label": "Casques, gants & protections", "url": "/casques-gants-protections/" },
+    { "label": "Protection balistique", "url": "/protection-balistique/" },
+    { "label": "Normes & sécurité", "url": "/normes-securite/" },
+    { "label": "Guides & comparatifs", "url": "/guides/" },
+    { "label": "À propos", "url": "/a-propos/" }
+  ],
+  "footerNav": [
+    { "label": "À propos", "url": "/a-propos/" },
+    { "label": "Contact", "url": "/contact/" },
+    { "label": "Mentions légales", "url": "/fr/content/3-cgv.html" }
+  ]
+}

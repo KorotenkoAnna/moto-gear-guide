@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+
+# Ce site est en phase de test/structure — pas encore de contenu réel.
+# Retirer le "Disallow: /" ci-dessus (ou le remplacer par "Disallow:") au moment
+# du vrai lancement sur le domaine final, une fois le contenu rédigé.
