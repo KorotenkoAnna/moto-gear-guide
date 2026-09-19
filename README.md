@@ -78,20 +78,19 @@ noindex: true          ← уберите эту строку, когда нап
 | URL (не менять) | Файл |
 |---|---|
 | /products/veste-costume-pare-balles/ | src/restored/protection-balistique/veste-costume-pare-balles.njk |
-| /a/l/en/products/veste-costume-pare-balles/ | src/restored/protection-balistique/veste-costume-pare-balles.en.njk |
+| /en/products/veste-costume-pare-balles/ (301 depuis /a/l/en/products/veste-costume-pare-balles/) | src/restored/protection-balistique/veste-costume-pare-balles.en.njk |
 | /collections/exclusivite-pare-balles/ | src/restored/protection-balistique/exclusivite-pare-balles.njk |
 | /products/doudoune-pare-balles/ | src/restored/protection-balistique/doudoune-pare-balles.njk |
-| /a/l/en/products/doudoune-pare-balles/ | src/restored/protection-balistique/doudoune-pare-balles.en.njk |
+| /en/products/doudoune-pare-balles/ (301 depuis /a/l/en/products/doudoune-pare-balles/) | src/restored/protection-balistique/doudoune-pare-balles.en.njk |
 | /fr/15-furtiv-protection-pare-balles.html | src/restored/protection-balistique/furtiv-protection-pare-balles.njk |
-| /en.html (открывается и как /en) | src/restored/protection-balistique/en-overview.njk |
 | /products/dorsale/ | src/restored/casques-gants-protections/dorsale.njk |
 | /products/sas-tec-protection/ | src/restored/casques-gants-protections/sas-tec-protection.njk |
-| /a/l/en/products/sas-tec-protection/ | src/restored/casques-gants-protections/sas-tec-protection.en.njk |
+| /en/products/sas-tec-protection/ (301 depuis /a/l/en/products/sas-tec-protection/) | src/restored/casques-gants-protections/sas-tec-protection.en.njk |
 | /fr/38-masques-barrieres/masques-barrieres.html | src/restored/casques-gants-protections/masques-barrieres.njk |
 | /products/blouson-reversible/ | src/restored/vestes-blousons/blouson-reversible.njk |
-| /a/l/en/products/blouson-reversible/ | src/restored/vestes-blousons/blouson-reversible.en.njk |
+| /en/products/blouson-reversible/ (301 depuis /a/l/en/products/blouson-reversible/) | src/restored/vestes-blousons/blouson-reversible.en.njk |
 | /products/trench-901/ | src/restored/vestes-blousons/trench-901.njk |
-| /a/l/en/products/trench-901/ | src/restored/vestes-blousons/trench-901.en.njk |
+| /en/products/trench-901/ (301 depuis /a/l/en/products/trench-901/) | src/restored/vestes-blousons/trench-901.en.njk |
 | /collections/outlet-grandes-tailles/ | src/restored/vestes-blousons/outlet-grandes-tailles.njk |
 | /collection/ | src/restored/vestes-blousons/collection.njk |
 | /city-bike-york/ | src/restored/guides/city-bike-york.njk |
@@ -124,6 +123,14 @@ noindex: true          ← уберите эту строку, когда нап
 - Чтобы добавить новую двуязычную пару страниц: создаёте файл в `src/...` (FR) и его копию в
   `src/en/...` (EN), в обоих указываете `lang: fr` / `lang: en` и `translationUrl:` друг на
   друга.
+- Восстановленные англоязычные товарные страницы (`src/restored/**/*.en.njk`) живут под
+  `/en/products/...` — тем же паттерном, что и новая EN-версия сайта. Старый адрес на этих
+  страницах (`/a/l/en/products/...`, под которым были реальные внешние ссылки) сохранён через
+  301-редирект в `netlify.toml`, а не отдельным файлом.
+- Старый адрес `/en.html` (тоже с реальной внешней ссылкой) теперь 301-редиректит прямо на
+  `/en/` — отдельная EN-страница-заглушка `en-overview.njk`, которая раньше там жила, убрана:
+  у неё было бы одинаковое с настоящей английской главной ровно то же самое `permalink: "/en/"`,
+  а два файла не могут отдавать один и тот же URL.
 
 ## Картинки
 

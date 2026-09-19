@@ -28,6 +28,11 @@
   status = 301
 
 [[redirects]]
+  from = "/en.html"
+  to = "/en/"
+  status = 301
+
+[[redirects]]
   from = "/pages/password"
   to = "/"
   status = 301
@@ -96,6 +101,11 @@
 [[redirects]]
   from = "/fr/content/*"
   to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/a/l/en/products/*"
+  to = "/en/products/:splat"
   status = 301
 
 [[redirects]]
